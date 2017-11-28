@@ -32,8 +32,33 @@ if arrayWords[i] !== arrayWords[i+1] then push arrayWords[i] to uniqueWords;
 Unique Word Count: var uniqueWords = uniqueWords.length
 */
 
+
+//dummy variable of 50 lorem ipsum words
+var submittedText = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate'
+
+
+//var submittedText = 'The the the. And and and. The, and the'
+
+//convert the string to lower case
+submittedText = submittedText.trim().toLowerCase();
+
+//split the string into an array of word and sort it alphabetically
+var arrayWords = submittedText.split(/[ .:;?!~,`"&|()<>{}\[\]\r\n/\\]+/);
+arrayWords.sort();
+
+//remove undefined elements
+for (i=0; i<arrayWords.length; i++){
+  if (arrayWords[i] === "") {
+    arrayWords.shift();
+  }
+};
+
+console.log(arrayWords);
+
+
+
 //array to test functions
-var arrayWords = ['and', 'and', 'and', 'and', 'name', 'name', 'potato', 'the', 'the', 'the', 'zebra'];
+//var arrayWords = ['and', 'and', 'and', 'and', 'name', 'name', 'potato', 'the', 'the', 'the', 'zebra'];
 
 //function to return average word length
 function averageWordLength(array) {
