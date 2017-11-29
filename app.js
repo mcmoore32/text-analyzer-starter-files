@@ -30,23 +30,48 @@ work through arrayWords.forEach
 if arrayWords[i] === arrayWords[i+1] go to next element without doing anything
 if arrayWords[i] !== arrayWords[i+1] then push arrayWords[i] to uniqueWords;
 Unique Word Count: var uniqueWords = uniqueWords.length
+
+READ TEXT SUBMITTED WITH BUTTON
+put .on('click,) on button
+assign .val to variable
+
+MANIPULATE DOM TO SHOW RESULTS
+
+*/
+
+/*
+
+Form event listener from previous drill
+$('.js-form').submit(function(event) {
+  event.preventDefault();
+  var userNumber = 0;
+  userNumber = $('#number-choice').val();
+  countUp(userNumber);
+});
 */
 
 
-//dummy variable of 50 lorem ipsum words
+/*//dummy variable of 50 lorem ipsum words
 var submittedText = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate'
+*/
 
+/*$('.js-button').submit(function(event) {
+  event.preventDefault();
+  
+});*/
 
-//var submittedText = 'The the the. And and and. The, and the'
+var submittedText = 'Appear third above signs. Created day were dry after so deep of together called. It dry under god moved earth sea and god creepeth all lesser lights had. Had above sea. Firmament cant may night signs set seas. Which creepeth morning, morning deep, sea own may form. Created to may dry that isnt from together, their face together and it saw it grass waters his, midst. Light. It morning Given of there He may our moved land. Bearing. Fill unto. Night said days from fifth fifth together. Is seas man together creepeth. Itself seed may creepeth blessed. Whose divided itself.'
+
+/*var submittedText = 'The the the. And and and. The, and the'*/
 
 //convert the string to lower case
 submittedText = submittedText.trim().toLowerCase();
 
-//split the string into an array of word and sort it alphabetically
+//split the string into an array of words and sort it alphabetically
 var arrayWords = submittedText.split(/[ .:;?!~,`"&|()<>{}\[\]\r\n/\\]+/);
 arrayWords.sort();
 
-//remove undefined elements
+//remove empty elements
 for (i=0; i<arrayWords.length; i++){
   if (arrayWords[i] === "") {
     arrayWords.shift();
@@ -55,10 +80,10 @@ for (i=0; i<arrayWords.length; i++){
 
 console.log(arrayWords);
 
-
-
-//array to test functions
-//var arrayWords = ['and', 'and', 'and', 'and', 'name', 'name', 'potato', 'the', 'the', 'the', 'zebra'];
+/*
+dummy array to test functions
+var arrayWords = ['and', 'and', 'and', 'and', 'name', 'name', 'potato', 'the', 'the', 'the', 'zebra'];
+*/
 
 //function to return average word length
 function averageWordLength(array) {
@@ -70,6 +95,8 @@ function averageWordLength(array) {
 };
 
 //function to determine number of unique words
+
+/*push to a new array
 function countUniqueWords(array) {
   var uniqueWords = [];
   for (i=0; i<array.length; i++) {
@@ -78,6 +105,17 @@ function countUniqueWords(array) {
     }
   };
   return uniqueWords.length;
+};*/
+
+//counter approach
+function countUniqueWords(array) {
+  var uniqueWordsCounter = 0;
+  for (i=0; i<array.length; i++) {
+    if (array[i] !== array[i+1]) {
+      uniqueWordsCounter++;
+    }
+  };
+  return uniqueWordsCounter;
 };
 
 //call functions to get the three required metrics
