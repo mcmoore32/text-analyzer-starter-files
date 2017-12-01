@@ -1,5 +1,8 @@
 // your code here!
 /*
+
+Thinkful directions:
+
 displays 3 metrics:
 
     Total word count of the submitted text (Word Count:)
@@ -51,33 +54,55 @@ $('.js-form').submit(function(event) {
 */
 
 
-/*//dummy variable of 50 lorem ipsum words
+/*
+dummy variable of 50 lorem ipsum words
+
 var submittedText = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate'
 */
 
-/*$('.js-button').submit(function(event) {
-  event.preventDefault();
-  
-});*/
 
+//dummy variable of 100 lorem words
 var submittedText = 'Appear third above signs. Created day were dry after so deep of together called. It dry under god moved earth sea and god creepeth all lesser lights had. Had above sea. Firmament cant may night signs set seas. Which creepeth morning, morning deep, sea own may form. Created to may dry that isnt from together, their face together and it saw it grass waters his, midst. Light. It morning Given of there He may our moved land. Bearing. Fill unto. Night said days from fifth fifth together. Is seas man together creepeth. Itself seed may creepeth blessed. Whose divided itself.'
+
 
 /*var submittedText = 'The the the. And and and. The, and the'*/
 
+
+//Get text from user submission
+
+/*var submittedText = '';
+$('.js-button').submit(function(event) {
+  event.preventDefault()});
+//  var submittedText = '';
+submittedText = $('#user-text').val();
+submittedText = 'test inside';
+*/
+
+console.log(submittedText);
+
+
+
 //convert the string to lower case
-submittedText = submittedText.trim().toLowerCase();
+submittedText.trim().toLowerCase();
 
 //split the string into an array of words and sort it alphabetically
 var arrayWords = submittedText.split(/[ .:;?!~,`"&|()<>{}\[\]\r\n/\\]+/);
 arrayWords.sort();
 
 //remove empty elements
+var inc = 0;
+while (arrayWords[inc] === "") {
+  arrayWords.shift();
+  inc++;
+};
+
+/*
 for (i=0; i<arrayWords.length; i++){
   if (arrayWords[i] === "") {
     arrayWords.shift();
   }
 };
-
+*/
 console.log(arrayWords);
 
 /*
