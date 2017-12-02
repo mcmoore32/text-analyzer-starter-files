@@ -100,15 +100,18 @@ $('.js-form').submit(function(event) {
     arrayWords.shift();
     inc++;
   };
-  console.log(arrayWords);
   //call functions to get the three required metrics
   var numWords = arrayWords.length;
   var numUniqueWords = countUniqueWords(arrayWords);
-  var AvgWordLength = averageWordLength(arrayWords);
-  //test function output
-  console.log(numWords);
-  console.log(numUniqueWords);
-  console.log(AvgWordLength);
+  var avgWordLength = averageWordLength(arrayWords).toFixed(2);
+  //Removes .hidden class to reveal results section
+  $('.text-report').removeClass('hidden');
+  //Empties the dd elements of previous runs
+  $('dd').empty();
+  //Outputs the resutls - span necessary?
+  $('<span>'+numWords+'</span>').appendTo('#js-count');
+  $('<span>'+numUniqueWords+'</span>').appendTo('#js-unique');
+  $('<span>'+avgWordLength+'</span>').appendTo('#js-averge');
 });
 
 
